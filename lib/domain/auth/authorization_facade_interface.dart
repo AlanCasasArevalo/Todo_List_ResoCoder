@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:meta/meta.dart';
-import 'package:todo_list_reso_coder/domain/auth/authentication_failure.dart';
 
 import './authentication.dart';
 
