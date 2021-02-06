@@ -10,6 +10,11 @@ abstract class ValueObject<T> {
   const ValueObject();
   Either<ValueFailure<T>, T> get value;
 
+  // Throws [UnexpectedValueError] contains the [ValueFailure]
+  T getOrCrash() {
+    return value.fold((left) => throw UnexpectedValueError(left), (right) => right);
+  }
+
   bool isValid() => value.isRight();
 
   @override
