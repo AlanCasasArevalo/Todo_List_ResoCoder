@@ -626,3 +626,5 @@ hs_err_pid*
 !/gradle/wrapper/gradle-wrapper.jar
 
 # End of https://www.toptal.com/developers/gitignore/api/cocoapods,xcode,swift,swiftpackagemanager,gradle,android,androidstudio,webstorm,webstorm+all,webstorm+iml,flutter,dart
+
+android/app/google-services.json
