@@ -2,11 +2,14 @@ import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:todo_list_reso_coder/domain/auth/authentication.dart';
 
-import '../domain/auth/authentication.dart';
+import '../../domain/auth/authentication.dart';
 
+@lazySingleton
+@RegisterAs(AuthorizationFacadeInterface)
 class FirebaseAuthFacade implements AuthorizationFacadeInterface {
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
@@ -65,9 +68,8 @@ class FirebaseAuthFacade implements AuthorizationFacadeInterface {
       final authCredential = GoogleAuthProvider.getCredential(
           idToken: googleAuthentication.idToken,
           accessToken: googleAuthentication.accessToken);
-      _firebaseAuth
-          .signInWithCredential(authCredential)
-          .then((value) => right(unit));
+      await _firebaseAuth.signInWithCredential(authCredential);
+      return right(unit);
     } on PlatformException catch (_) {
       return left(AuthenticationFailure.serverError());
     }

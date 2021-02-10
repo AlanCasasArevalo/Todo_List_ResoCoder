@@ -50,44 +50,44 @@ const $SignInFormEvent = _$SignInFormEventTearOff();
 /// @nodoc
 mixin _$SignInFormEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult emailChanged(String emailString),
-    @required TResult passwordChanged(String passwordString),
-    @required TResult registerWithEmailAndPasswordPressed(),
-    @required TResult signInWithEmailAndPasswordPressed(),
-    @required TResult signInWithGooglePressed(),
+  Result when<Result extends Object>({
+    @required Result emailChanged(String emailString),
+    @required Result passwordChanged(String passwordString),
+    @required Result registerWithEmailAndPasswordPressed(),
+    @required Result signInWithEmailAndPasswordPressed(),
+    @required Result signInWithGooglePressed(),
   });
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult emailChanged(String emailString),
-    TResult passwordChanged(String passwordString),
-    TResult registerWithEmailAndPasswordPressed(),
-    TResult signInWithEmailAndPasswordPressed(),
-    TResult signInWithGooglePressed(),
-    @required TResult orElse(),
+  Result maybeWhen<Result extends Object>({
+    Result emailChanged(String emailString),
+    Result passwordChanged(String passwordString),
+    Result registerWithEmailAndPasswordPressed(),
+    Result signInWithEmailAndPasswordPressed(),
+    Result signInWithGooglePressed(),
+    @required Result orElse(),
   });
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult emailChanged(EmailChanged value),
-    @required TResult passwordChanged(PasswordChanged value),
+  Result map<Result extends Object>({
+    @required Result emailChanged(EmailChanged value),
+    @required Result passwordChanged(PasswordChanged value),
     @required
-        TResult registerWithEmailAndPasswordPressed(
+        Result registerWithEmailAndPasswordPressed(
             RegisterWithEmailAndPasswordPressed value),
     @required
-        TResult signInWithEmailAndPasswordPressed(
+        Result signInWithEmailAndPasswordPressed(
             SignInWithEmailAndPasswordPressed value),
-    @required TResult signInWithGooglePressed(SignInWithGooglePressed value),
+    @required Result signInWithGooglePressed(SignInWithGooglePressed value),
   });
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult emailChanged(EmailChanged value),
-    TResult passwordChanged(PasswordChanged value),
-    TResult registerWithEmailAndPasswordPressed(
+  Result maybeMap<Result extends Object>({
+    Result emailChanged(EmailChanged value),
+    Result passwordChanged(PasswordChanged value),
+    Result registerWithEmailAndPasswordPressed(
         RegisterWithEmailAndPasswordPressed value),
-    TResult signInWithEmailAndPasswordPressed(
+    Result signInWithEmailAndPasswordPressed(
         SignInWithEmailAndPasswordPressed value),
-    TResult signInWithGooglePressed(SignInWithGooglePressed value),
-    @required TResult orElse(),
+    Result signInWithGooglePressed(SignInWithGooglePressed value),
+    @required Result orElse(),
   });
 }
 
@@ -170,19 +170,18 @@ class _$EmailChanged with DiagnosticableTreeMixin implements EmailChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(emailString);
 
-  @JsonKey(ignore: true)
   @override
   $EmailChangedCopyWith<EmailChanged> get copyWith =>
       _$EmailChangedCopyWithImpl<EmailChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult emailChanged(String emailString),
-    @required TResult passwordChanged(String passwordString),
-    @required TResult registerWithEmailAndPasswordPressed(),
-    @required TResult signInWithEmailAndPasswordPressed(),
-    @required TResult signInWithGooglePressed(),
+  Result when<Result extends Object>({
+    @required Result emailChanged(String emailString),
+    @required Result passwordChanged(String passwordString),
+    @required Result registerWithEmailAndPasswordPressed(),
+    @required Result signInWithEmailAndPasswordPressed(),
+    @required Result signInWithGooglePressed(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -194,13 +193,13 @@ class _$EmailChanged with DiagnosticableTreeMixin implements EmailChanged {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult emailChanged(String emailString),
-    TResult passwordChanged(String passwordString),
-    TResult registerWithEmailAndPasswordPressed(),
-    TResult signInWithEmailAndPasswordPressed(),
-    TResult signInWithGooglePressed(),
-    @required TResult orElse(),
+  Result maybeWhen<Result extends Object>({
+    Result emailChanged(String emailString),
+    Result passwordChanged(String passwordString),
+    Result registerWithEmailAndPasswordPressed(),
+    Result signInWithEmailAndPasswordPressed(),
+    Result signInWithGooglePressed(),
+    @required Result orElse(),
   }) {
     assert(orElse != null);
     if (emailChanged != null) {
@@ -211,16 +210,16 @@ class _$EmailChanged with DiagnosticableTreeMixin implements EmailChanged {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult emailChanged(EmailChanged value),
-    @required TResult passwordChanged(PasswordChanged value),
+  Result map<Result extends Object>({
+    @required Result emailChanged(EmailChanged value),
+    @required Result passwordChanged(PasswordChanged value),
     @required
-        TResult registerWithEmailAndPasswordPressed(
+        Result registerWithEmailAndPasswordPressed(
             RegisterWithEmailAndPasswordPressed value),
     @required
-        TResult signInWithEmailAndPasswordPressed(
+        Result signInWithEmailAndPasswordPressed(
             SignInWithEmailAndPasswordPressed value),
-    @required TResult signInWithGooglePressed(SignInWithGooglePressed value),
+    @required Result signInWithGooglePressed(SignInWithGooglePressed value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -232,15 +231,15 @@ class _$EmailChanged with DiagnosticableTreeMixin implements EmailChanged {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult emailChanged(EmailChanged value),
-    TResult passwordChanged(PasswordChanged value),
-    TResult registerWithEmailAndPasswordPressed(
+  Result maybeMap<Result extends Object>({
+    Result emailChanged(EmailChanged value),
+    Result passwordChanged(PasswordChanged value),
+    Result registerWithEmailAndPasswordPressed(
         RegisterWithEmailAndPasswordPressed value),
-    TResult signInWithEmailAndPasswordPressed(
+    Result signInWithEmailAndPasswordPressed(
         SignInWithEmailAndPasswordPressed value),
-    TResult signInWithGooglePressed(SignInWithGooglePressed value),
-    @required TResult orElse(),
+    Result signInWithGooglePressed(SignInWithGooglePressed value),
+    @required Result orElse(),
   }) {
     assert(orElse != null);
     if (emailChanged != null) {
@@ -254,7 +253,6 @@ abstract class EmailChanged implements SignInFormEvent {
   const factory EmailChanged(String emailString) = _$EmailChanged;
 
   String get emailString;
-  @JsonKey(ignore: true)
   $EmailChangedCopyWith<EmailChanged> get copyWith;
 }
 
@@ -325,19 +323,18 @@ class _$PasswordChanged
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(passwordString);
 
-  @JsonKey(ignore: true)
   @override
   $PasswordChangedCopyWith<PasswordChanged> get copyWith =>
       _$PasswordChangedCopyWithImpl<PasswordChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult emailChanged(String emailString),
-    @required TResult passwordChanged(String passwordString),
-    @required TResult registerWithEmailAndPasswordPressed(),
-    @required TResult signInWithEmailAndPasswordPressed(),
-    @required TResult signInWithGooglePressed(),
+  Result when<Result extends Object>({
+    @required Result emailChanged(String emailString),
+    @required Result passwordChanged(String passwordString),
+    @required Result registerWithEmailAndPasswordPressed(),
+    @required Result signInWithEmailAndPasswordPressed(),
+    @required Result signInWithGooglePressed(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -349,13 +346,13 @@ class _$PasswordChanged
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult emailChanged(String emailString),
-    TResult passwordChanged(String passwordString),
-    TResult registerWithEmailAndPasswordPressed(),
-    TResult signInWithEmailAndPasswordPressed(),
-    TResult signInWithGooglePressed(),
-    @required TResult orElse(),
+  Result maybeWhen<Result extends Object>({
+    Result emailChanged(String emailString),
+    Result passwordChanged(String passwordString),
+    Result registerWithEmailAndPasswordPressed(),
+    Result signInWithEmailAndPasswordPressed(),
+    Result signInWithGooglePressed(),
+    @required Result orElse(),
   }) {
     assert(orElse != null);
     if (passwordChanged != null) {
@@ -366,16 +363,16 @@ class _$PasswordChanged
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult emailChanged(EmailChanged value),
-    @required TResult passwordChanged(PasswordChanged value),
+  Result map<Result extends Object>({
+    @required Result emailChanged(EmailChanged value),
+    @required Result passwordChanged(PasswordChanged value),
     @required
-        TResult registerWithEmailAndPasswordPressed(
+        Result registerWithEmailAndPasswordPressed(
             RegisterWithEmailAndPasswordPressed value),
     @required
-        TResult signInWithEmailAndPasswordPressed(
+        Result signInWithEmailAndPasswordPressed(
             SignInWithEmailAndPasswordPressed value),
-    @required TResult signInWithGooglePressed(SignInWithGooglePressed value),
+    @required Result signInWithGooglePressed(SignInWithGooglePressed value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -387,15 +384,15 @@ class _$PasswordChanged
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult emailChanged(EmailChanged value),
-    TResult passwordChanged(PasswordChanged value),
-    TResult registerWithEmailAndPasswordPressed(
+  Result maybeMap<Result extends Object>({
+    Result emailChanged(EmailChanged value),
+    Result passwordChanged(PasswordChanged value),
+    Result registerWithEmailAndPasswordPressed(
         RegisterWithEmailAndPasswordPressed value),
-    TResult signInWithEmailAndPasswordPressed(
+    Result signInWithEmailAndPasswordPressed(
         SignInWithEmailAndPasswordPressed value),
-    TResult signInWithGooglePressed(SignInWithGooglePressed value),
-    @required TResult orElse(),
+    Result signInWithGooglePressed(SignInWithGooglePressed value),
+    @required Result orElse(),
   }) {
     assert(orElse != null);
     if (passwordChanged != null) {
@@ -409,7 +406,6 @@ abstract class PasswordChanged implements SignInFormEvent {
   const factory PasswordChanged(String passwordString) = _$PasswordChanged;
 
   String get passwordString;
-  @JsonKey(ignore: true)
   $PasswordChangedCopyWith<PasswordChanged> get copyWith;
 }
 
@@ -465,12 +461,12 @@ class _$RegisterWithEmailAndPasswordPressed
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult emailChanged(String emailString),
-    @required TResult passwordChanged(String passwordString),
-    @required TResult registerWithEmailAndPasswordPressed(),
-    @required TResult signInWithEmailAndPasswordPressed(),
-    @required TResult signInWithGooglePressed(),
+  Result when<Result extends Object>({
+    @required Result emailChanged(String emailString),
+    @required Result passwordChanged(String passwordString),
+    @required Result registerWithEmailAndPasswordPressed(),
+    @required Result signInWithEmailAndPasswordPressed(),
+    @required Result signInWithGooglePressed(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -482,13 +478,13 @@ class _$RegisterWithEmailAndPasswordPressed
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult emailChanged(String emailString),
-    TResult passwordChanged(String passwordString),
-    TResult registerWithEmailAndPasswordPressed(),
-    TResult signInWithEmailAndPasswordPressed(),
-    TResult signInWithGooglePressed(),
-    @required TResult orElse(),
+  Result maybeWhen<Result extends Object>({
+    Result emailChanged(String emailString),
+    Result passwordChanged(String passwordString),
+    Result registerWithEmailAndPasswordPressed(),
+    Result signInWithEmailAndPasswordPressed(),
+    Result signInWithGooglePressed(),
+    @required Result orElse(),
   }) {
     assert(orElse != null);
     if (registerWithEmailAndPasswordPressed != null) {
@@ -499,16 +495,16 @@ class _$RegisterWithEmailAndPasswordPressed
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult emailChanged(EmailChanged value),
-    @required TResult passwordChanged(PasswordChanged value),
+  Result map<Result extends Object>({
+    @required Result emailChanged(EmailChanged value),
+    @required Result passwordChanged(PasswordChanged value),
     @required
-        TResult registerWithEmailAndPasswordPressed(
+        Result registerWithEmailAndPasswordPressed(
             RegisterWithEmailAndPasswordPressed value),
     @required
-        TResult signInWithEmailAndPasswordPressed(
+        Result signInWithEmailAndPasswordPressed(
             SignInWithEmailAndPasswordPressed value),
-    @required TResult signInWithGooglePressed(SignInWithGooglePressed value),
+    @required Result signInWithGooglePressed(SignInWithGooglePressed value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -520,15 +516,15 @@ class _$RegisterWithEmailAndPasswordPressed
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult emailChanged(EmailChanged value),
-    TResult passwordChanged(PasswordChanged value),
-    TResult registerWithEmailAndPasswordPressed(
+  Result maybeMap<Result extends Object>({
+    Result emailChanged(EmailChanged value),
+    Result passwordChanged(PasswordChanged value),
+    Result registerWithEmailAndPasswordPressed(
         RegisterWithEmailAndPasswordPressed value),
-    TResult signInWithEmailAndPasswordPressed(
+    Result signInWithEmailAndPasswordPressed(
         SignInWithEmailAndPasswordPressed value),
-    TResult signInWithGooglePressed(SignInWithGooglePressed value),
-    @required TResult orElse(),
+    Result signInWithGooglePressed(SignInWithGooglePressed value),
+    @required Result orElse(),
   }) {
     assert(orElse != null);
     if (registerWithEmailAndPasswordPressed != null) {
@@ -595,12 +591,12 @@ class _$SignInWithEmailAndPasswordPressed
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult emailChanged(String emailString),
-    @required TResult passwordChanged(String passwordString),
-    @required TResult registerWithEmailAndPasswordPressed(),
-    @required TResult signInWithEmailAndPasswordPressed(),
-    @required TResult signInWithGooglePressed(),
+  Result when<Result extends Object>({
+    @required Result emailChanged(String emailString),
+    @required Result passwordChanged(String passwordString),
+    @required Result registerWithEmailAndPasswordPressed(),
+    @required Result signInWithEmailAndPasswordPressed(),
+    @required Result signInWithGooglePressed(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -612,13 +608,13 @@ class _$SignInWithEmailAndPasswordPressed
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult emailChanged(String emailString),
-    TResult passwordChanged(String passwordString),
-    TResult registerWithEmailAndPasswordPressed(),
-    TResult signInWithEmailAndPasswordPressed(),
-    TResult signInWithGooglePressed(),
-    @required TResult orElse(),
+  Result maybeWhen<Result extends Object>({
+    Result emailChanged(String emailString),
+    Result passwordChanged(String passwordString),
+    Result registerWithEmailAndPasswordPressed(),
+    Result signInWithEmailAndPasswordPressed(),
+    Result signInWithGooglePressed(),
+    @required Result orElse(),
   }) {
     assert(orElse != null);
     if (signInWithEmailAndPasswordPressed != null) {
@@ -629,16 +625,16 @@ class _$SignInWithEmailAndPasswordPressed
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult emailChanged(EmailChanged value),
-    @required TResult passwordChanged(PasswordChanged value),
+  Result map<Result extends Object>({
+    @required Result emailChanged(EmailChanged value),
+    @required Result passwordChanged(PasswordChanged value),
     @required
-        TResult registerWithEmailAndPasswordPressed(
+        Result registerWithEmailAndPasswordPressed(
             RegisterWithEmailAndPasswordPressed value),
     @required
-        TResult signInWithEmailAndPasswordPressed(
+        Result signInWithEmailAndPasswordPressed(
             SignInWithEmailAndPasswordPressed value),
-    @required TResult signInWithGooglePressed(SignInWithGooglePressed value),
+    @required Result signInWithGooglePressed(SignInWithGooglePressed value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -650,15 +646,15 @@ class _$SignInWithEmailAndPasswordPressed
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult emailChanged(EmailChanged value),
-    TResult passwordChanged(PasswordChanged value),
-    TResult registerWithEmailAndPasswordPressed(
+  Result maybeMap<Result extends Object>({
+    Result emailChanged(EmailChanged value),
+    Result passwordChanged(PasswordChanged value),
+    Result registerWithEmailAndPasswordPressed(
         RegisterWithEmailAndPasswordPressed value),
-    TResult signInWithEmailAndPasswordPressed(
+    Result signInWithEmailAndPasswordPressed(
         SignInWithEmailAndPasswordPressed value),
-    TResult signInWithGooglePressed(SignInWithGooglePressed value),
-    @required TResult orElse(),
+    Result signInWithGooglePressed(SignInWithGooglePressed value),
+    @required Result orElse(),
   }) {
     assert(orElse != null);
     if (signInWithEmailAndPasswordPressed != null) {
@@ -721,12 +717,12 @@ class _$SignInWithGooglePressed
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult emailChanged(String emailString),
-    @required TResult passwordChanged(String passwordString),
-    @required TResult registerWithEmailAndPasswordPressed(),
-    @required TResult signInWithEmailAndPasswordPressed(),
-    @required TResult signInWithGooglePressed(),
+  Result when<Result extends Object>({
+    @required Result emailChanged(String emailString),
+    @required Result passwordChanged(String passwordString),
+    @required Result registerWithEmailAndPasswordPressed(),
+    @required Result signInWithEmailAndPasswordPressed(),
+    @required Result signInWithGooglePressed(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -738,13 +734,13 @@ class _$SignInWithGooglePressed
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult emailChanged(String emailString),
-    TResult passwordChanged(String passwordString),
-    TResult registerWithEmailAndPasswordPressed(),
-    TResult signInWithEmailAndPasswordPressed(),
-    TResult signInWithGooglePressed(),
-    @required TResult orElse(),
+  Result maybeWhen<Result extends Object>({
+    Result emailChanged(String emailString),
+    Result passwordChanged(String passwordString),
+    Result registerWithEmailAndPasswordPressed(),
+    Result signInWithEmailAndPasswordPressed(),
+    Result signInWithGooglePressed(),
+    @required Result orElse(),
   }) {
     assert(orElse != null);
     if (signInWithGooglePressed != null) {
@@ -755,16 +751,16 @@ class _$SignInWithGooglePressed
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult emailChanged(EmailChanged value),
-    @required TResult passwordChanged(PasswordChanged value),
+  Result map<Result extends Object>({
+    @required Result emailChanged(EmailChanged value),
+    @required Result passwordChanged(PasswordChanged value),
     @required
-        TResult registerWithEmailAndPasswordPressed(
+        Result registerWithEmailAndPasswordPressed(
             RegisterWithEmailAndPasswordPressed value),
     @required
-        TResult signInWithEmailAndPasswordPressed(
+        Result signInWithEmailAndPasswordPressed(
             SignInWithEmailAndPasswordPressed value),
-    @required TResult signInWithGooglePressed(SignInWithGooglePressed value),
+    @required Result signInWithGooglePressed(SignInWithGooglePressed value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -776,15 +772,15 @@ class _$SignInWithGooglePressed
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult emailChanged(EmailChanged value),
-    TResult passwordChanged(PasswordChanged value),
-    TResult registerWithEmailAndPasswordPressed(
+  Result maybeMap<Result extends Object>({
+    Result emailChanged(EmailChanged value),
+    Result passwordChanged(PasswordChanged value),
+    Result registerWithEmailAndPasswordPressed(
         RegisterWithEmailAndPasswordPressed value),
-    TResult signInWithEmailAndPasswordPressed(
+    Result signInWithEmailAndPasswordPressed(
         SignInWithEmailAndPasswordPressed value),
-    TResult signInWithGooglePressed(SignInWithGooglePressed value),
-    @required TResult orElse(),
+    Result signInWithGooglePressed(SignInWithGooglePressed value),
+    @required Result orElse(),
   }) {
     assert(orElse != null);
     if (signInWithGooglePressed != null) {
@@ -837,7 +833,6 @@ mixin _$SignInFormState {
   bool get isSubmitting;
   Option<Either<AuthenticationFailure, Unit>> get authFailureOrSuccessOption;
 
-  @JsonKey(ignore: true)
   $SignInFormStateCopyWith<SignInFormState> get copyWith;
 }
 
@@ -1018,7 +1013,6 @@ class _$_SignInFormState
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(authFailureOrSuccessOption);
 
-  @JsonKey(ignore: true)
   @override
   _$SignInFormStateCopyWith<_SignInFormState> get copyWith =>
       __$SignInFormStateCopyWithImpl<_SignInFormState>(this, _$identity);
@@ -1049,6 +1043,5 @@ abstract class _SignInFormState implements SignInFormState {
   @override
   Option<Either<AuthenticationFailure, Unit>> get authFailureOrSuccessOption;
   @override
-  @JsonKey(ignore: true)
   _$SignInFormStateCopyWith<_SignInFormState> get copyWith;
 }
