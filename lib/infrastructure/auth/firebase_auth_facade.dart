@@ -49,7 +49,7 @@ class FirebaseAuthFacade implements AuthorizationFacadeInterface {
       if (error.code.toLowerCase() == 'ERROR_USER_NOT_FOUND'.toLowerCase() ||
           error.code.toLowerCase() == 'ERROR_WRONG_PASSWORD'.toLowerCase()) {
         return left(
-            const AuthenticationFailure.invalidEmailAnPasswordCombination());
+            const AuthenticationFailure.invalidEmailAndPasswordCombination());
       } else {
         return left(const AuthenticationFailure.serverError());
       }
