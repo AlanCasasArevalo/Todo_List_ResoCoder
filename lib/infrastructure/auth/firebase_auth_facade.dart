@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
@@ -7,6 +8,7 @@ import 'package:meta/meta.dart';
 import 'package:todo_list_reso_coder/domain/auth/authentication.dart';
 
 import '../../domain/auth/authentication.dart';
+import '../../infrastructure/auth/authorization.dart';
 
 @lazySingleton
 @RegisterAs(AuthorizationFacadeInterface)
@@ -61,7 +63,7 @@ class FirebaseAuthFacade implements AuthorizationFacadeInterface {
     try {
       final googleUser = await _googleSignIn.signIn();
       if (googleUser == null) {
-        return left(AuthenticationFailure.canceledByUser());
+        return left(const AuthenticationFailure.canceledByUser());
       }
       final googleAuthentication = await googleUser.authentication;
 
@@ -71,7 +73,23 @@ class FirebaseAuthFacade implements AuthorizationFacadeInterface {
       await _firebaseAuth.signInWithCredential(authCredential);
       return right(unit);
     } on PlatformException catch (_) {
-      return left(AuthenticationFailure.serverError());
+      return left(const AuthenticationFailure.serverError());
     }
   }
+
+  /*
+  @override
+  Future<Option<User>> getSignedInUser() =>
+      _firebaseAuth.currentUser().then((firebaseUser) =>
+          some(User(id: UniqueId.fromUniqueString(firebaseUser.uid))));
+   */
+
+  @override
+  Future<Option<User>> getSignedInUser() => _firebaseAuth
+      .currentUser()
+      .then((firebaseUser) => optionOf(firebaseUser?.toDomain()));
+
+  @override
+  Future<void> signOut() =>
+      Future.wait([_googleSignIn.signOut(), _firebaseAuth.signOut()]);
 }

@@ -4,6 +4,9 @@ import 'package:meta/meta.dart';
 import './authentication.dart';
 
 abstract class AuthorizationFacadeInterface {
+
+  Future<Option<User>> getSignedInUser();
+
   Future<Either<AuthenticationFailure, Unit>> registerWithEmailAndPassword({
     @required EmailAddress emailAddress,
     @required Password password,
@@ -15,4 +18,6 @@ abstract class AuthorizationFacadeInterface {
   });
 
   Future<Either<AuthenticationFailure, Unit>> signInWithGoogle();
+
+  Future<void> signOut();
 }
