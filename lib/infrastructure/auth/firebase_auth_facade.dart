@@ -10,8 +10,7 @@ import 'package:todo_list_reso_coder/domain/auth/authentication.dart';
 import '../../domain/auth/authentication.dart';
 import '../../infrastructure/auth/authorization.dart';
 
-@lazySingleton
-@RegisterAs(AuthorizationFacadeInterface)
+@LazySingleton(as: AuthorizationFacadeInterface)
 class FirebaseAuthFacade implements AuthorizationFacadeInterface {
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
